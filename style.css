@@ -184,6 +184,19 @@ h3 {
   color: #46564b;
   font-size: 0.875rem;
 }
+.event-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 599px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 .site-footer {
   padding: 1.25rem 0;

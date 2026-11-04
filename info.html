@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Info e luoghi — Segnale</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.css">
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -25,9 +26,45 @@
       <h1 id="titolo-info">Info e luoghi</h1>
       <p class="lead">Tutto quello che serve sapere per visitare il festival.</p>
     </section>
+
+    <section class="content-section" aria-labelledby="titolo-luoghi">
+      <h2 id="titolo-luoghi">I luoghi</h2>
+      <div class="swiper venues-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/luoghi/sede-centrale.jpg" alt="Sede Centrale" width="900" height="600">
+            <h3>Sede Centrale</h3>
+            <p class="venue-description">Sede centrale — Corso Duca degli Abruzzi 24 — Officina Nord nel festival immaginario.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/luoghi/politecnico-valentino.jpg" alt="Politecnico Valentino" width="900" height="600">
+            <h3>Politecnico Valentino</h3>
+            <p class="venue-description">Politecnico al Valentino — Viale Mattioli 39 — Spazio Forma nel festival immaginario.</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/luoghi/mirafiori.jpg" alt="Mirafiori" width="900" height="600">
+            <h3>Mirafiori</h3>
+            <p class="venue-description">Sede di Mirafiori — Corso Luigi Settembrini 178 — Cortile Comune nel festival immaginario.</p>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <p class="reading-text">Festival, sedi ed eventi sono inventati per questa esercitazione. Non rappresentano un evento reale.</p>
+    </section>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.venues-swiper', {
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 
   <footer class="site-footer"><div class="container"><p>Segnale · Progetto didattico · Festival immaginario</p></div></footer>
 </body>
 </html>
-

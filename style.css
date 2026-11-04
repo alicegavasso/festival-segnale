@@ -1,14 +1,10 @@
-/* Stile iniziale: tipografia, colori e variabili CSS sono già predisposti.
-   Lavoreremo su collegamenti, CSS condiviso e disposizione delle schede. */
-
-/* Scelte comuni: ogni regola usa var() per richiamarne il valore. */
 :root {
   --colore-primario: #c44536;
   --colore-primario-scuro: #8b2f28;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
-  --font-testo: Arial, Helvetica, sans-serif;
-  --font-titoli: Georgia, "Times New Roman", serif;
+  --font-testo: Courier, Helvetica, sans-serif;
+  --font-titoli: "Futura", Helvetica, sans-serif;
 }
 
 * {
@@ -156,7 +152,11 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-/* Qui inseriremo la regola .event-grid durante la demo. */
+.event-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
 
 .event-card {
   margin-bottom: 1.5rem;
@@ -184,23 +184,6 @@ h3 {
   color: #46564b;
   font-size: 0.875rem;
 }
-.event-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .event-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 .site-footer {
   padding: 1.25rem 0;
@@ -222,4 +205,14 @@ h3 {
   top: 1rem;
 }
 
-/* Qui aggiungeremo la media query durante la demo. */
+@media (min-width: 600px) {
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

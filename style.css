@@ -110,6 +110,7 @@ h3 {
 .lead {
   max-width: 48ch;
   font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .reading-text {
@@ -259,31 +260,39 @@ h3 {
   color: #46564b;
   font-size: 0.875rem;
 }
-
 .swiper-button-prev,
 .swiper-button-next {
-  width: 44px;
-  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
   background-color: #ffffff; /* Sfondo iniziale bianco */
-  border: 1px solid var(--colore-primario);
+  border: 1px solid var(--colore-primario) !important; 
   border-radius: 50%;
   color: var(--colore-primario) !important;
+
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 1rem;
+  height: 1rem;
+  max-width: 1rem;
+  max-height: 1rem;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 0.6rem;
-  font-weight: bold;
-}
-
-
-.swiper-button-prev {
-  left: 1rem;
-}
-
-.swiper-button-next {
-  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiper-button-prev:hover,

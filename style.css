@@ -3,8 +3,8 @@
   --colore-primario-scuro: #8b2f28;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
-  --font-testo: Courier, Helvetica, sans-serif;
-  --font-titoli: "Futura", Helvetica, sans-serif;
+  --font-testo: "Archivo Narrow", Helvetica, sans-serif;
+  --font-titoli: "Bitcount Grid Single", Helvetica, sans-serif;
 }
 
 * {
@@ -48,6 +48,7 @@ a:focus-visible {
   display: inline-block;
   color: var(--colore-testo);
   font-size: 1.75rem;
+  font-family: var(--font-titoli);
   font-weight: bold;
   line-height: 1.2;
   text-decoration: none;
@@ -62,16 +63,31 @@ a:focus-visible {
 
 nav {
   margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
 }
 
 nav a {
   display: inline-block;
   margin-right: 1rem;
   padding: 0.25rem 0;
+  display: block;
+
 }
 
 nav a[aria-current="page"] {
   font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .intro {

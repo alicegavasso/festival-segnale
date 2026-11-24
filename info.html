@@ -19,7 +19,7 @@
       <nav aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="programma.html">Programma</a>
-        <a href="info-e-luoghi.html" aria-current="page">Info e luoghi</a>
+        <a href="info.html" aria-current="page">Info e luoghi</a>
       </nav>
     </div>
   </header>
@@ -62,7 +62,7 @@
       <p class="reading-text">Festival, sedi ed eventi sono inventati per questa esercitazione. Non rappresentano un evento reale.</p>
     </section>
 
-        <section class="content-section" aria-labelledby="titolo-mappa">
+    <section class="content-section" aria-labelledby="titolo-mappa">
       <h2 id="titolo-mappa">Come arrivare</h2>
       <div class="map-wrapper">
         <iframe id="mappa-sedi" title="Mappa delle tre sedi di riferimento per il festival Segnale a Torino"
@@ -76,6 +76,23 @@
         <li><strong>Sede di Mirafiori</strong>: Corso Luigi Settembrini 178, Torino. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Corso+Luigi+Settembrini+178,+Torino" target="_blank" rel="noopener">Indicazioni con Google Maps</a></li>
       </ul>
     </section>
+
+    <section class="content-section" aria-labelledby="titolo-meteo">
+      <h2 id="titolo-meteo">Meteo a Torino adesso</h2>
+      <p class="reading-text">
+         Questi dati mostrano il meteo di oggi a Torino, non la previsione per le date del festival.
+     </p>
+
+     <div id="meteo-box" class="meteo-box" aria-live="polite">
+       <p class="reading-text">Caricamento meteo in corso...</p>
+    </div>
+      <p class="reading-text">
+        Dati meteo:
+      <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo, licenza CC BY 4.0</a>
+    </p>
+</section>
+
+
 
   </main>
 
@@ -91,5 +108,37 @@
   </script>
 
   <footer class="site-footer"><div class="container"><p>Segnale · Progetto didattico · Festival immaginario</p></div></footer>
+  <script>
+  async function caricaMeteo() {
+    const box = document.getElementById('meteo-box');
+
+    try {
+      const risposta = await fetch('https://api.open-meteo.com/v1/forecast?latitude=45.0703&longitude=7.6869&current=temperature_2m,wind_speed_10m&timezone=Europe%2FRome');
+
+      if (!risposta.ok) {
+        throw new Error('Risposta non valida');
+      }
+
+      const dati = await risposta.json();
+
+      const temperatura = dati.current.temperature_2m;
+      const vento = dati.current.wind_speed_10m;
+      const ora = dati.current.time;
+
+      box.innerHTML = `
+        <p class="meteo-valore">${temperatura}°C</p>
+        <p>Vento: ${vento} km/h</p>
+        <p>Ora del dato: ${ora.replace('T', ' ')}</p>
+      `;
+    } catch (errore) {
+      box.innerHTML = `
+        <p>Impossibile caricare i dati meteo in questo momento.</p>
+      `;
+    }
+  }
+
+  caricaMeteo();
+</script>
+
 </body>
 </html>

@@ -219,7 +219,7 @@ h3 {
   top: 1rem;
 }
 
-/*@media (min-width: 600px) {
+@media (min-width: 600px) {
   .event-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -228,7 +228,7 @@ h3 {
   .event-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-}*/
+}
 /* Swiper - Carousel dei luoghi */
 .venues-swiper {
   position: left;
@@ -327,4 +327,23 @@ h3 {
   height: 28rem;
   border: 0;
 }
+
+.meteo-box {
+  max-width: 54rem;
+  padding: 1.25rem;
+  border: 1px solid #b7c0b7;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  margin: 1rem 0;
+}
+
+.meteo-box p {
+  margin: 0.5rem 0;
+}
+
+.meteo-box .meteo-valore {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 

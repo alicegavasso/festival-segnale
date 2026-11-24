@@ -1,7 +1,23 @@
 [
   {
     "id": 1,
-    "nome": "Officina Nord — Sede centrale",
-    "indirizzo": "Corso Duca degli Abruzzi 24, Torino"
+    "nome": "Sede Centrale",
+    "indirizzo": "Corso Duca degli Abruzzi 24, Torino",
+    "nome_festival": "Officina Nord",
+    "immagine": "assets/luoghi/sede-centrale.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Politecnico Valentino",
+    "indirizzo": "Viale Mattioli 39, Torino",
+    "nome_festival": "Spazio Forma",
+    "immagine": "assets/luoghi/politecnico-valentino.jpg"
+  },
+  {
+    "id": 3,
+    "nome": "Sede di Mirafiori",
+    "indirizzo": "Corso Luigi Settembrini 178, Torino",
+    "nome_festival": "Cortile Comune",
+    "immagine": "assets/luoghi/mirafiori.jpg"
   }
 ]
